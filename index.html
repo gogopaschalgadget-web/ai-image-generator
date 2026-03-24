@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DreamForge AI — Free AI Image Generator | Create Art in Seconds</title>
+  <meta name="description" content="Generate stunning AI images for free. No signup required. Type a prompt, get art in seconds. Powered by advanced AI models.">
+  <meta property="og:title" content="DreamForge AI — Free AI Image Generator">
+  <meta property="og:description" content="Generate stunning AI images for free. No signup, no credit card. Just type and create.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://gogopaschalgadget-web.github.io/ai-image-generator/">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX" crossorigin="anonymous"></script>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_GA4_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YOUR_GA4_ID');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-input: #1a1a2e;
+      --border: rgba(255,255,255,0.08);
+      --accent: #8b5cf6;
+      --accent-hover: #a78bfa;
+      --accent-glow: rgba(139,92,246,0.3);
+      --teal: #14b8a6;
+      --pink: #ec4899;
+      --gold: #f59e0b;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --success: #22c55e;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated gradient background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(139,92,246,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(236,72,153,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(20,184,166,0.04) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+
+    /* Header */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative; z-index: 10;
+    }
+    .header-inner {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .logo {
+      font-size: 22px; font-weight: 800; color: #fff;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .logo-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .credits-display {
+      display: flex; align-items: center; gap: 12px;
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 8px 16px; border-radius: 24px;
+    }
+    .credits-count {
+      font-weight: 700; color: var(--gold);
+    }
+    .credits-label { font-size: 13px; color: var(--text-muted); }
+    .get-more-btn {
+      padding: 6px 14px;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      color: #fff; border: none; border-radius: 8px;
+      font-size: 12px; font-weight: 700; cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: transform 0.15s;
+    }
+    .get-more-btn:hover { transform: scale(1.05); }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(139,92,246,0.15);
+      color: var(--accent-hover);
+      padding: 6px 18px; border-radius: 20px;
+      font-size: 13px; font-weight: 600;
+      margin-bottom: 20px;
+      border: 1px solid rgba(139,92,246,0.2);
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #fff 30%, var(--accent-hover) 70%, var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 18px; color: var(--text-muted);
+      max-width: 540px; margin: 0 auto;
+    }
+
+    /* Generator */
+    .generator {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+
+    .prompt-area {
+      display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
+    }
+    .prompt-input {
+      flex: 1 1 300px;
+      padding: 16px 20px;
+      background: var(--bg-input);
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      color: #fff;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      min-width: 0;
+    }
+    .prompt-input:focus { border-color: var(--accent); }
+    .prompt-input::placeholder { color: var(--text-dim); }
+
+    .generate-btn {
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: transform 0.15s, box-shadow 0.15s;
+      white-space: nowrap;
+      min-width: 160px;
+    }
+    .generate-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+    .generate-btn:disabled {
+      opacity: 0.5; cursor: not-allowed;
+    }
+
+    /* Options row */
+    .options-row {
+      display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+    }
+    .option-group {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .option-label { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+    .option-select {
+      padding: 8px 12px;
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      outline: none;
+    }
+
+    /* Suggestion chips */
+    .suggestions {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px;
+    }
+    .chip {
+      padding: 6px 14px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .chip:hover {
+      background: rgba(139,92,246,0.15);
+      color: var(--accent-hover);
+      border-color: rgba(139,92,246,0.3);
+    }
+
+    /* Output area */
+    .output-area {
+      margin-top: 32px;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .output-placeholder {
+      text-align: center; color: var(--text-dim); padding: 40px;
+    }
+    .output-placeholder .icon { font-size: 48px; margin-bottom: 12px; opacity: 0.3; }
+    .output-placeholder p { font-size: 15px; }
+
+    /* Loading animation */
+    .loading-container {
+      text-align: center;
+      padding: 40px;
+    }
+    .loading-spinner {
+      width: 48px; height: 48px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-text { color: var(--text-muted); font-size: 14px; }
+    .loading-tip {
+      color: var(--text-dim); font-size: 13px; margin-top: 8px; font-style: italic;
+    }
+
+    /* Generated image */
+    .result-container { width: 100%; text-align: center; }
+    .result-img {
+      max-width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+    .result-img:hover { transform: scale(1.01); }
+    .result-actions {
+      display: flex; gap: 12px; justify-content: center; margin-top: 20px; flex-wrap: wrap;
+    }
+    .result-btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: transform 0.15s;
+      border: none;
+    }
+    .result-btn:hover { transform: translateY(-1px); }
+    .result-btn.primary {
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      color: #fff;
+    }
+    .result-btn.secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--text); border: 1px solid var(--border);
+    }
+
+    /* Ad gate modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px 32px;
+      max-width: 440px;
+      width: 92%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 32px 64px rgba(0,0,0,0.5);
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none; color: var(--text-dim);
+      font-size: 24px; cursor: pointer;
+    }
+    .modal-icon {
+      width: 64px; height: 64px; border-radius: 16px;
+      background: linear-gradient(135deg, var(--gold), #f97316);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; margin: 0 auto 20px;
+    }
+    .modal h2 { color: #fff; font-size: 22px; margin-bottom: 8px; }
+    .modal p { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; line-height: 1.5; }
+
+    .watch-ad-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--gold), #f97316);
+      color: #1a1a2e;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: transform 0.15s;
+      margin-bottom: 12px;
+    }
+    .watch-ad-btn:hover { transform: translateY(-2px); }
+    .watch-ad-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .ad-progress {
+      display: none;
+      margin: 16px 0;
+    }
+    .ad-progress-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .ad-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), #f97316);
+      border-radius: 3px;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+    .ad-progress-text {
+      font-size: 13px; color: var(--text-dim); margin-top: 8px;
+    }
+
+    /* Ad container in modal */
+    .ad-container-modal {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      min-height: 250px;
+      margin: 16px 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Gallery */
+    .gallery-section { padding: 40px 0; }
+    .gallery-section h2 {
+      font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 24px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .gallery-item {
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+    .gallery-item:hover { transform: translateY(-3px); }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .gallery-prompt {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.85));
+      padding: 32px 12px 12px;
+      font-size: 12px; color: rgba(255,255,255,0.8);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .gallery-item:hover .gallery-prompt { opacity: 1; }
+
+    /* Stats bar */
+    .stats-bar {
+      display: flex; gap: 32px; justify-content: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat strong { display: block; font-size: 20px; color: #fff; font-weight: 800; }
+    .stat span { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Ad slots */
+    .ad-slot {
+      text-align: center;
+      margin: 32px auto;
+      max-width: 728px;
+    }
+
+    /* How it works */
+    .how-it-works {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+    }
+    .how-it-works h2 {
+      font-size: 24px; font-weight: 700; color: #fff; text-align: center; margin-bottom: 32px;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+    }
+    .step {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .step-num {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--pink));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 18px; color: #fff;
+      margin: 0 auto 12px;
+    }
+    .step h3 { color: #fff; font-size: 16px; margin-bottom: 6px; }
+    .step p { color: var(--text-muted); font-size: 14px; line-height: 1.5; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+    footer a { color: var(--teal); }
+
+    @media (max-width: 640px) {
+      .hero { padding: 40px 0 24px; }
+      .hero h1 { font-size: 32px; }
+      .generator { padding: 20px; }
+      .prompt-area { flex-direction: column; }
+      .generate-btn { width: 100%; }
+      .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    }
+  </style>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "DreamForge AI",
+    "description": "Free AI image generator. Create stunning art from text prompts.",
+    "url": "https://gogopaschalgadget-web.github.io/ai-image-generator/",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-icon">&#9733;</div>
+        DreamForge AI
+      </div>
+      <div class="credits-display">
+        <div>
+          <span class="credits-count" id="credits-count">3</span>
+          <span class="credits-label"> free creates left</span>
+        </div>
+        <button class="get-more-btn" onclick="showAdGate()" id="get-more-header" style="display:none;">Get More</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">100% Free &bull; No Signup Required</div>
+      <h1>Turn Words Into<br>Stunning Art</h1>
+      <p>Type any idea and watch AI bring it to life in seconds. Landscapes, portraits, abstract art, product mockups — anything you can describe.</p>
+    </div>
+  </section>
+
+  <!-- TOP AD SLOT -->
+  <div class="container ad-slot">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXX"
+      data-ad-slot="XXXXXXX"
+      data-ad-format="horizontal"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- GENERATOR -->
+  <div class="container">
+    <div class="generator">
+      <div class="prompt-area">
+        <input type="text" class="prompt-input" id="prompt-input"
+          placeholder="Describe the image you want to create..."
+          maxlength="500"
+          onkeydown="if(event.key==='Enter')generateImage()">
+        <button class="generate-btn" id="generate-btn" onclick="generateImage()">
+          Create Image
+        </button>
+      </div>
+
+      <div class="options-row">
+        <div class="option-group">
+          <span class="option-label">Style:</span>
+          <select class="option-select" id="style-select">
+            <option value="">Auto</option>
+            <option value=", photorealistic, 8k, detailed">Photorealistic</option>
+            <option value=", digital art, vibrant colors, trending on artstation">Digital Art</option>
+            <option value=", oil painting, masterpiece, classical art style">Oil Painting</option>
+            <option value=", anime style, cel shading, manga">Anime</option>
+            <option value=", watercolor painting, soft edges, artistic">Watercolor</option>
+            <option value=", 3D render, octane render, cinema 4D">3D Render</option>
+            <option value=", pixel art, retro game style, 16-bit">Pixel Art</option>
+            <option value=", pencil sketch, hand drawn, detailed linework">Sketch</option>
+          </select>
+        </div>
+        <div class="option-group">
+          <span class="option-label">Size:</span>
+          <select class="option-select" id="size-select">
+            <option value="1024x1024">Square (1:1)</option>
+            <option value="1024x768">Landscape (4:3)</option>
+            <option value="768x1024">Portrait (3:4)</option>
+            <option value="1280x720">Wide (16:9)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Suggestion chips -->
+      <div class="suggestions">
+        <span class="chip" onclick="usePrompt(this)">A dragon flying over a neon city at sunset</span>
+        <span class="chip" onclick="usePrompt(this)">Cozy cabin in snowy mountains, warm light</span>
+        <span class="chip" onclick="usePrompt(this)">Astronaut riding a horse on Mars</span>
+        <span class="chip" onclick="usePrompt(this)">Beautiful garden with glowing flowers at night</span>
+        <span class="chip" onclick="usePrompt(this)">Cyberpunk street food market, rain, neon signs</span>
+      </div>
+
+      <!-- Output -->
+      <div class="output-area" id="output-area">
+        <div class="output-placeholder" id="placeholder">
+          <div class="icon">&#127912;</div>
+          <p>Your AI creation will appear here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MID-PAGE AD SLOT -->
+  <div class="container ad-slot">
+    <ins class="adsbygoogle"
+      style="display:block; text-align:center;"
+      data-ad-layout="in-article"
+      data-ad-format="fluid"
+      data-ad-client="ca-pub-XXXXXXX"
+      data-ad-slot="XXXXXXX"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="container gallery-section">
+    <h2>Community Creations</h2>
+    <div class="gallery-grid" id="gallery-grid">
+      <!-- Populated by JS with example prompts -->
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="container how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Describe It</h3>
+        <p>Type what you want to see — a sunset, a character, a product mockup, anything.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>AI Creates It</h3>
+        <p>Our AI model generates your image in 10-30 seconds. No account needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Download Free</h3>
+        <p>Save your creation in full resolution. Use it however you want.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Want More?</h3>
+        <p>Watch a short ad to unlock 3 more free creations. No credit card ever.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM MULTIPLEX AD -->
+  <div class="container ad-slot" style="margin-bottom: 40px;">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-format="autorelaxed"
+      data-ad-client="ca-pub-XXXXXXX"
+      data-ad-slot="XXXXXXX"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>DreamForge AI &mdash; Free AI Image Generator</p>
+      <p style="margin-top: 8px;">
+        <a href="https://gogopaschalgadget-web.github.io/tradespro/" target="_blank">TradesPro</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/eduspark/" target="_blank">EduSpark</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/claimcheck/" target="_blank">ClaimCheck</a> &middot;
+        <a href="https://gogopaschal.gumroad.com" target="_blank">ProPrompt Store</a>
+      </p>
+      <p style="margin-top: 8px; font-size: 12px; color: var(--text-dim);">
+        Images generated using AI. Results may vary. Free tier: 3 creations per session, then watch an ad for 3 more.
+      </p>
+    </div>
+  </footer>
+
+  <!-- AD GATE MODAL -->
+  <div class="modal-overlay" id="ad-gate-modal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeAdGate()">&times;</button>
+
+      <div class="modal-icon">&#127912;</div>
+      <h2>Unlock 3 More Creations</h2>
+      <p>You've used your free creations! Watch a quick sponsored message to get 3 more — totally free, no signup.</p>
+
+      <!-- Ad container shown during "watching" -->
+      <div class="ad-container-modal" id="ad-container-modal">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-XXXXXXX"
+          data-ad-slot="XXXXXXX"
+          data-ad-format="rectangle"
+          data-full-width-responsive="true"></ins>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="ad-progress" id="ad-progress">
+        <div class="ad-progress-bar">
+          <div class="ad-progress-fill" id="ad-progress-fill"></div>
+        </div>
+        <div class="ad-progress-text" id="ad-progress-text">Loading sponsored content... 15s</div>
+      </div>
+
+      <button class="watch-ad-btn" id="watch-ad-btn" onclick="watchAd()">
+        Watch Ad &amp; Get 3 Free Creates
+      </button>
+
+      <p style="color: var(--text-dim); font-size: 12px; margin-top: 8px;">
+        Takes about 15 seconds. You'll get 3 more image creations instantly.
+      </p>
+    </div>
+  </div>
+
+  <script>
+  // ============================================================
+  // STATE
+  // ============================================================
+  var MAX_FREE = 3;
+  var BONUS_PER_AD = 3;
+  var AD_DURATION = 15; // seconds to "watch" ad
+
+  var credits = MAX_FREE;
+  var totalGenerated = 0;
+  var galleryImages = [];
+  var isGenerating = false;
+
+  // Restore credits from session storage
+  (function() {
+    var stored = sessionStorage.getItem('df_credits');
+    if (stored !== null) credits = parseInt(stored);
+    var storedTotal = sessionStorage.getItem('df_total');
+    if (storedTotal !== null) totalGenerated = parseInt(storedTotal);
+    updateCreditsUI();
+  })();
+
+  function saveState() {
+    sessionStorage.setItem('df_credits', credits);
+    sessionStorage.setItem('df_total', totalGenerated);
+  }
+
+  function updateCreditsUI() {
+    document.getElementById('credits-count').textContent = credits;
+    document.getElementById('get-more-header').style.display = credits <= 0 ? 'inline-block' : 'none';
+  }
+
+  // ============================================================
+  // GENERATE IMAGE
+  // ============================================================
+  function generateImage() {
+    if (isGenerating) return;
+
+    var prompt = document.getElementById('prompt-input').value.trim();
+    if (!prompt) {
+      document.getElementById('prompt-input').focus();
+      return;
+    }
+
+    // Check credits
+    if (credits <= 0) {
+      showAdGate();
+      return;
+    }
+
+    isGenerating = true;
+    credits--;
+    totalGenerated++;
+    saveState();
+    updateCreditsUI();
+
+    var style = document.getElementById('style-select').value;
+    var size = document.getElementById('size-select').value;
+    var dims = size.split('x');
+    var fullPrompt = prompt + style;
+
+    // Show loading
+    var outputArea = document.getElementById('output-area');
+    outputArea.innerHTML = '<div class="loading-container">' +
+      '<div class="loading-spinner"></div>' +
+      '<div class="loading-text">Creating your image...</div>' +
+      '<div class="loading-tip">This usually takes 10-30 seconds</div>' +
+      '</div>';
+
+    document.getElementById('generate-btn').disabled = true;
+    document.getElementById('generate-btn').textContent = 'Creating...';
+
+    // Use Pollinations.ai — free, no API key needed
+    var imageUrl = 'https://image.pollinations.ai/prompt/' +
+      encodeURIComponent(fullPrompt) +
+      '?width=' + dims[0] + '&height=' + dims[1] +
+      '&seed=' + Math.floor(Math.random() * 999999) +
+      '&nologo=true';
+
+    var img = new Image();
+    img.onload = function() {
+      isGenerating = false;
+      document.getElementById('generate-btn').disabled = false;
+      document.getElementById('generate-btn').textContent = 'Create Image';
+
+      outputArea.innerHTML = '<div class="result-container">' +
+        '<img class="result-img" src="' + imageUrl + '" alt="AI generated image: ' + escapeHtml(prompt) + '">' +
+        '<div class="result-actions">' +
+          '<a href="' + imageUrl + '" download="dreamforge-' + Date.now() + '.jpg" class="result-btn primary">Download</a>' +
+          '<button class="result-btn secondary" onclick="generateVariation()">Create Another</button>' +
+          '<button class="result-btn secondary" onclick="shareImage(\'' + escapeHtml(prompt) + '\')">Share Prompt</button>' +
+        '</div>' +
+      '</div>';
+
+      // Add to session gallery
+      addToGallery(prompt, imageUrl);
+
+      // Track
+      gtag('event', 'image_generated', { prompt_length: prompt.length, style: style || 'auto' });
+
+      // Show ad gate reminder if credits are low
+      if (credits <= 0) {
+        setTimeout(function() { showAdGate(); }, 2000);
+      }
+    };
+
+    img.onerror = function() {
+      isGenerating = false;
+      document.getElementById('generate-btn').disabled = false;
+      document.getElementById('generate-btn').textContent = 'Create Image';
+
+      // Refund credit on error
+      credits++;
+      totalGenerated--;
+      saveState();
+      updateCreditsUI();
+
+      outputArea.innerHTML = '<div class="output-placeholder">' +
+        '<div class="icon">&#9888;</div>' +
+        '<p>Something went wrong. Please try again or use a different prompt.</p>' +
+      '</div>';
+    };
+
+    img.src = imageUrl;
+  }
+
+  // ============================================================
+  // AD GATE
+  // ============================================================
+  function showAdGate() {
+    document.getElementById('ad-gate-modal').classList.add('active');
+    document.getElementById('watch-ad-btn').disabled = false;
+    document.getElementById('watch-ad-btn').textContent = 'Watch Ad & Get 3 Free Creates';
+    document.getElementById('ad-progress').style.display = 'none';
+    document.getElementById('ad-container-modal').style.display = 'none';
+    gtag('event', 'ad_gate_shown', { credits_remaining: credits });
+  }
+
+  function closeAdGate() {
+    document.getElementById('ad-gate-modal').classList.remove('active');
+  }
+
+  function watchAd() {
+    var btn = document.getElementById('watch-ad-btn');
+    btn.disabled = true;
+    btn.textContent = 'Loading sponsored content...';
+
+    // Show ad container and progress
+    document.getElementById('ad-container-modal').style.display = 'flex';
+    document.getElementById('ad-progress').style.display = 'block';
+
+    // Try to push ad
+    try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+
+    // Countdown timer
+    var remaining = AD_DURATION;
+    var fill = document.getElementById('ad-progress-fill');
+    var text = document.getElementById('ad-progress-text');
+
+    var interval = setInterval(function() {
+      remaining--;
+      var pct = ((AD_DURATION - remaining) / AD_DURATION) * 100;
+      fill.style.width = pct + '%';
+      text.textContent = 'Viewing sponsored content... ' + remaining + 's';
+
+      if (remaining <= 0) {
+        clearInterval(interval);
+        fill.style.width = '100%';
+
+        // Grant credits
+        credits += BONUS_PER_AD;
+        saveState();
+        updateCreditsUI();
+
+        text.textContent = 'Done! +' + BONUS_PER_AD + ' creations unlocked!';
+        btn.textContent = '+' + BONUS_PER_AD + ' Credits Added!';
+        btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+
+        gtag('event', 'ad_watched', { credits_earned: BONUS_PER_AD });
+
+        // Close modal after brief delay
+        setTimeout(function() {
+          closeAdGate();
+          btn.style.background = '';
+        }, 1500);
+      }
+    }, 1000);
+  }
+
+  // ============================================================
+  // GALLERY
+  // ============================================================
+  var examplePrompts = [
+    { prompt: 'A mystical forest with bioluminescent mushrooms and fireflies at twilight', seed: 42 },
+    { prompt: 'Futuristic Tokyo street with holographic signs and flying cars', seed: 123 },
+    { prompt: 'A golden retriever wearing a space suit on the moon, photorealistic', seed: 256 },
+    { prompt: 'Underwater coral reef city with mermaids and glowing sea creatures', seed: 789 },
+    { prompt: 'Cozy bookshop on a rainy evening, warm lighting, watercolor style', seed: 444 },
+    { prompt: 'Mountain landscape with northern lights reflecting in a crystal lake', seed: 555 },
+    { prompt: 'Steampunk clockwork dragon breathing fire, detailed gears and brass', seed: 678 },
+    { prompt: 'Japanese zen garden in autumn with red maple leaves falling', seed: 321 },
+  ];
+
+  function buildGallery() {
+    var grid = document.getElementById('gallery-grid');
+    grid.innerHTML = examplePrompts.map(function(item) {
+      var url = 'https://image.pollinations.ai/prompt/' +
+        encodeURIComponent(item.prompt) +
+        '?width=512&height=512&seed=' + item.seed + '&nologo=true';
+      return '<div class="gallery-item" onclick="useGalleryPrompt(\'' + escapeHtml(item.prompt) + '\')">' +
+        '<img src="' + url + '" alt="' + escapeHtml(item.prompt) + '" loading="lazy">' +
+        '<div class="gallery-prompt">' + escapeHtml(item.prompt) + '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function addToGallery(prompt, url) {
+    galleryImages.unshift({ prompt: prompt, url: url });
+    // Keep gallery from growing infinitely
+    if (galleryImages.length > 20) galleryImages.pop();
+  }
+
+  function useGalleryPrompt(prompt) {
+    document.getElementById('prompt-input').value = prompt;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('prompt-input').focus();
+  }
+
+  // ============================================================
+  // HELPERS
+  // ============================================================
+  function usePrompt(el) {
+    document.getElementById('prompt-input').value = el.textContent;
+    document.getElementById('prompt-input').focus();
+  }
+
+  function generateVariation() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('prompt-input').focus();
+  }
+
+  function shareImage(prompt) {
+    var text = 'Check out this AI image I created with DreamForge AI: "' + prompt + '"';
+    if (navigator.share) {
+      navigator.share({ title: 'DreamForge AI Creation', text: text, url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(text + ' ' + window.location.href);
+      alert('Prompt copied to clipboard!');
+    }
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+              .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+
+  // Init
+  buildGallery();
+  </script>
+</body>
+</html>
