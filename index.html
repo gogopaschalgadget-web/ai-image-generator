@@ -829,7 +829,7 @@
       encodeURIComponent(fullPrompt) +
       '?width=' + dims[0] + '&height=' + dims[1] +
       '&seed=' + Math.floor(Math.random() * 999999) +
-      '&nologo=true&key=pk_AB9noLRFqyNHyewQ';
+      '&nologo=true&model=flux&key=pk_AB9noLRFqyNHyewQ';
 
     var img = new Image();
     img.onload = function() {
@@ -960,7 +960,7 @@
     grid.innerHTML = examplePrompts.map(function(item) {
       var url = 'https://image.pollinations.ai/prompt/' +
         encodeURIComponent(item.prompt) +
-        '?width=512&height=512&seed=' + item.seed + '&nologo=true&key=pk_AB9noLRFqyNHyewQ';
+        '?width=512&height=512&seed=' + item.seed + '&nologo=true&model=flux&key=pk_AB9noLRFqyNHyewQ';
       return '<div class="gallery-item" onclick="useGalleryPrompt(\'' + escapeHtml(item.prompt) + '\')">' +
         '<img src="' + url + '" alt="' + escapeHtml(item.prompt) + '" loading="lazy">' +
         '<div class="gallery-prompt">' + escapeHtml(item.prompt) + '</div>' +
