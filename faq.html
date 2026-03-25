@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — DreamForge AI Free Image Generator Questions Answered</title>
+  <meta name="description" content="Frequently asked questions about DreamForge AI. Learn about pricing (it's free!), how many images you can create, what styles are available, and how the AI works.">
+  <meta name="keywords" content="DreamForge AI FAQ, free AI image generator questions, AI art help, is DreamForge free, AI image generator how it works">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="FAQ — DreamForge AI">
+  <meta property="og:description" content="Everything you need to know about DreamForge AI, the free AI image generator.">
+  <meta property="og:url" content="https://gogopaschalgadget-web.github.io/ai-image-generator/faq.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://gogopaschalgadget-web.github.io/ai-image-generator/faq.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5182415121977508" crossorigin="anonymous"></script>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZLDKMTPKP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6ZLDKMTPKP');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #12121a;
+      --border: rgba(255,255,255,0.08);
+      --accent: #8b5cf6;
+      --teal: #14b8a6;
+      --pink: #ec4899;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --radius: 12px;
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-dark); color: var(--text); min-height: 100vh; line-height: 1.7; }
+    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse at 20% 20%, rgba(139,92,246,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(236,72,153,0.06) 0%, transparent 50%); pointer-events: none; z-index: 0; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
+
+    header { padding: 1rem 0; border-bottom: 1px solid var(--border); position: relative; z-index: 1; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+    .logo { font-weight: 800; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+    .logo-icon { display: inline-block; background: linear-gradient(135deg, var(--accent), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-right: 0.25rem; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+    .hero { padding: 3rem 0 2rem; text-align: center; }
+    .hero h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; background: linear-gradient(135deg, #fff, var(--accent), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 1.25rem 1.5rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: rgba(139,92,246,0.05); }
+    .faq-q .arrow { font-size: 1.25rem; color: var(--accent); transition: transform 0.3s; }
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-a {
+      padding: 0 1.5rem 1.25rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      display: none;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    .ad-slot { background: var(--bg-card); padding: 1rem; text-align: center; margin: 2rem 0; border-radius: var(--radius); min-height: 90px; border: 1px solid var(--border); }
+
+    .cta-box { background: linear-gradient(135deg, var(--accent), var(--pink)); border-radius: var(--radius); padding: 2.5rem; text-align: center; margin: 3rem 0; }
+    .cta-box h2 { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; }
+    .cta-box p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
+    .cta-btn { display: inline-block; background: #fff; color: var(--accent); padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; }
+
+    footer { padding: 2rem 0; text-align: center; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
+    footer a { color: var(--teal); text-decoration: none; }
+
+    @media (max-width: 600px) { .hero h1 { font-size: 1.75rem; } }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is DreamForge AI really free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, DreamForge AI is 100% free. You get 3 image creations per session. After that, you can watch a short ad to unlock 3 more. There is no paid plan, no subscription, and no credit card required." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. DreamForge AI requires no signup, no email address, and no account. Just open the page and start creating." }
+      },
+      {
+        "@type": "Question",
+        "name": "What art styles are available?",
+        "acceptedAnswer": { "@type": "Answer", "text": "DreamForge AI offers 8 art styles: Photorealistic, Digital Art, Oil Painting, Anime, Watercolor, 3D Render, Pixel Art, and Sketch. You can also use Auto mode which lets the AI choose the best style." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use the images commercially?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Images generated by AI tools are generally considered to be in a legal gray area regarding copyright. We recommend using DreamForge AI images for personal projects, social media, and inspiration. For commercial use, please consult with a legal professional." }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to generate an image?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Most images are generated in 10-30 seconds, depending on the complexity of your prompt and current server load." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="./" class="logo"><span class="logo-icon">&#9733;</span> DreamForge AI</a>
+      <a href="./" class="back-link">&larr; Back to Generator</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section class="hero">
+      <h1>Frequently Asked Questions</h1>
+      <p>Everything you need to know about DreamForge AI.</p>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5182415121977508" data-ad-slot="XXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item open">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Is DreamForge AI really free?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">Yes, DreamForge AI is 100% free. You get 3 image creations per session. After that, watch a short ad to unlock 3 more. There is no paid tier, no subscription, and no credit card required — ever. We're supported by ads so you never have to pay.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Do I need to create an account or sign up?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">No. DreamForge AI requires absolutely no signup. No email, no password, no account. Just open the page and start typing your prompt. Your images are generated instantly in your browser.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What art styles are available?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">We offer 8 distinct styles: <strong>Photorealistic</strong> (camera-quality), <strong>Digital Art</strong> (vibrant concept art), <strong>Oil Painting</strong> (classical brushstrokes), <strong>Anime</strong> (Japanese animation), <strong>Watercolor</strong> (soft artistic washes), <strong>3D Render</strong> (CGI quality), <strong>Pixel Art</strong> (retro game style), and <strong>Sketch</strong> (hand-drawn linework). Plus an <strong>Auto</strong> mode that lets the AI choose. <a href="styles.html" style="color:var(--accent);">See our full styles guide &rarr;</a></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What image sizes can I create?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">DreamForge AI supports 4 sizes: <strong>Square (1:1)</strong> at 1024x1024 — great for social media and profiles; <strong>Landscape (4:3)</strong> at 1024x768 — perfect for blog headers; <strong>Portrait (3:4)</strong> at 768x1024 — ideal for phone wallpapers and posters; <strong>Wide (16:9)</strong> at 1280x720 — perfect for YouTube thumbnails and presentations.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How long does image generation take?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">Most images are generated in 10-30 seconds. Complex prompts with lots of detail may take slightly longer. The generation happens on remote AI servers, so your device speed doesn't matter — it works great even on phones.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Can I use the images commercially?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">AI-generated images exist in an evolving legal landscape. DreamForge AI places no restrictions on how you use your created images. However, we recommend consulting a legal professional if you plan to use them in commercial products, advertisements, or publications. For personal use, social media, blogs, and inspiration — go wild!</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How many images can I create?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">You start with 3 free creations per session. After using all 3, you can watch a short ad to unlock 3 more. There's no daily limit — you can keep watching ads for more creates as many times as you want.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How do I write better prompts?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">The key is being specific. Instead of "a cat," try "a fluffy orange tabby cat sitting on a windowsill, looking out at rain, warm lighting." Add details about lighting, mood, camera angle, and colors. We wrote a full guide on this: <a href="tips.html" style="color:var(--accent);">Read our prompt tips guide &rarr;</a></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Does DreamForge AI store my images?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">No. Your images are generated in real-time and displayed in your browser. We do not store, save, or have access to any images you create. If you want to keep an image, download it before leaving the page.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          What AI model powers DreamForge?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">DreamForge AI uses advanced open-source image generation models. The specific model may be updated over time to ensure you always get the best possible results.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          Does it work on mobile phones?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">Yes! DreamForge AI is fully responsive and works on any device — iPhone, Android, tablet, or desktop. The generation happens on remote servers, so it works just as fast on a phone as on a powerful computer.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          How is this different from Midjourney, DALL-E, or Stable Diffusion?
+          <span class="arrow">&#9660;</span>
+        </div>
+        <div class="faq-a">The biggest difference is that DreamForge AI is completely free with no signup. Midjourney costs $10-60/month and requires a Discord account. DALL-E charges per image through ChatGPT Plus ($20/month). Stable Diffusion is free but requires a powerful GPU and technical setup. DreamForge gives you instant access to AI art generation right in your browser.</div>
+      </div>
+
+    </div>
+
+    <div class="cta-box">
+      <h2>Still Have Questions?</h2>
+      <p>The best way to learn is to try it. Open the generator and create your first AI image — takes 30 seconds.</p>
+      <a href="./" class="cta-btn">Start Creating Free &rarr;</a>
+    </div>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-5182415121977508" data-ad-slot="XXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>DreamForge AI &mdash; Free AI Image Generator</p>
+      <p style="margin-top: 8px;">
+        <a href="./">Generator</a> &middot;
+        <a href="tips.html">Prompt Tips</a> &middot;
+        <a href="styles.html">Styles Guide</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/tradespro-guide/" target="_blank">TradesPro</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/eduspark/" target="_blank">EduSpark</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/claimcheck/" target="_blank">ClaimCheck</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/root-hub/" target="_blank">Root Hub</a>
+      </p>
+      <p style="margin-top: 8px; font-size: 12px; color: var(--text-dim);">&copy; 2026 DreamForge AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8 AI Art Styles Explained — DreamForge AI Style Guide</title>
+  <meta name="description" content="Explore 8 AI art styles: Photorealistic, Digital Art, Oil Painting, Anime, Watercolor, 3D Render, Pixel Art, and Sketch. See examples and learn when to use each.">
+  <meta name="keywords" content="AI art styles, photorealistic AI, anime AI art, digital art AI, pixel art generator, AI watercolor, 3D render AI, oil painting AI">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="8 AI Art Styles Explained — DreamForge AI">
+  <meta property="og:description" content="Explore 8 different AI art styles with examples. Find the perfect style for your creation.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1200&q=80">
+  <meta property="og:url" content="https://gogopaschalgadget-web.github.io/ai-image-generator/styles.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://gogopaschalgadget-web.github.io/ai-image-generator/styles.html">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5182415121977508" crossorigin="anonymous"></script>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6ZLDKMTPKP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6ZLDKMTPKP');
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-input: #1a1a2e;
+      --border: rgba(255,255,255,0.08);
+      --accent: #8b5cf6;
+      --accent-hover: #a78bfa;
+      --teal: #14b8a6;
+      --pink: #ec4899;
+      --gold: #f59e0b;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --radius: 12px;
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-dark); color: var(--text); min-height: 100vh; line-height: 1.7; }
+    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse at 20% 20%, rgba(139,92,246,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(236,72,153,0.06) 0%, transparent 50%); pointer-events: none; z-index: 0; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
+
+    header { padding: 1rem 0; border-bottom: 1px solid var(--border); position: relative; z-index: 1; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+    .logo { font-weight: 800; font-size: 1.25rem; color: var(--text); text-decoration: none; }
+    .logo-icon { display: inline-block; background: linear-gradient(135deg, var(--accent), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-right: 0.25rem; }
+    .back-link { color: var(--accent); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+    .hero { padding: 3rem 0 2rem; text-align: center; }
+    .hero h1 { font-size: 2.5rem; font-weight: 900; line-height: 1.2; margin-bottom: 1rem; background: linear-gradient(135deg, #fff, var(--accent), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { color: var(--text-muted); font-size: 1.1rem; max-width: 650px; margin: 0 auto; }
+
+    .styles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+
+    .style-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .style-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .style-header {
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .style-icon {
+      width: 56px; height: 56px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.75rem;
+      flex-shrink: 0;
+    }
+    .style-header h2 { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.15rem; }
+    .style-header .subtitle { font-size: 0.85rem; color: var(--text-muted); }
+    .style-body { padding: 0 1.5rem 1.5rem; }
+    .style-body p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .style-body strong { color: var(--text); }
+    .style-prompt {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-top: 0.5rem;
+    }
+    .style-prompt::before { content: 'Try: '; color: var(--text-dim); font-weight: 600; }
+    .try-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #fff;
+      transition: opacity 0.2s;
+    }
+    .try-btn:hover { opacity: 0.85; }
+
+    .ad-slot { background: var(--bg-card); padding: 1rem; text-align: center; margin: 2rem 0; border-radius: var(--radius); min-height: 90px; border: 1px solid var(--border); }
+
+    .cta-box { background: linear-gradient(135deg, var(--accent), var(--pink)); border-radius: var(--radius); padding: 2.5rem; text-align: center; margin: 3rem 0; }
+    .cta-box h2 { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; }
+    .cta-box p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
+    .cta-btn { display: inline-block; background: #fff; color: var(--accent); padding: 0.85rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; }
+
+    footer { padding: 2rem 0; text-align: center; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
+    footer a { color: var(--teal); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.75rem; }
+      .styles-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="./" class="logo"><span class="logo-icon">&#9733;</span> DreamForge AI</a>
+      <a href="./" class="back-link">&larr; Back to Generator</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section class="hero">
+      <h1>8 AI Art Styles</h1>
+      <p>DreamForge AI offers 8 distinct art styles. Each transforms your prompt in a completely different way. Here's what makes each one unique and when to use it.</p>
+    </section>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5182415121977508" data-ad-slot="XXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <div class="styles-grid">
+
+      <div class="style-card">
+        <div class="style-header">
+          <div class="style-icon" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8);">&#128247;</div>
+          <div>
+            <h2>Photorealistic</h2>
+            <div class="subtitle">Camera-quality realism</div>
+          </div>
+        </div>
+        <div class="style-body">
+          <p>Produces images that look like they were taken with a professional camera. Best for portraits, landscapes, product mockups, and anything that should look "real."</p>
+          <p><strong>Best for:</strong> Headshots, nature photography, product visualization, architecture</p>
+          <div class="style-prompt">Portrait of an elderly fisherman at golden hour, weathered hands holding a net, shallow depth of field, 85mm lens</div>
+          <a href="./" class="try-btn" style="background:#3b82f6;">Try Photorealistic &rarr;</a>
+        </div>
+      </div>
+
+      <div class="style-card">
+        <div class="style-header">
+          <div class="style-icon" style="background:linear-gradient(135deg,#8b5cf6,#6d28d9);">&#127912;</div>
+          <div>
+            <h2>Digital Art</h2>
+            <div class="subtitle">Vibrant & polished</div>
+          </div>
+        </div>
+        <div class="style-body">
+          <p>Bold, colorful artwork with a polished digital finish. Think concept art, game illustrations, and fantasy scenes with vivid colors.</p>
+          <p><strong>Best for:</strong> Fantasy scenes, game art, book covers, character design</p>
+          <div class="style-prompt">Epic dragon perched on a crystal mountain, aurora borealis sky, vibrant colors, concept art, trending on artstation</div>
+          <a href="./" class="try-btn" style="background:#8b5cf6;">Try Digital Art &rarr;</a>
+        </div>
+      </div>
+
+      <div class="style-card">
+        <div class="style-header">
+          <div class="style-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706);">&#128444;</div>
+          <div>
+            <h2>Oil Painting</h2>
+            <div class="subtitle">Classical masterpiece</div>
+          </div>
+        </div>
+        <div class="style-body">
+          <p>Rich, textured brushstrokes reminiscent of classical masters. Creates images with depth, warmth, and a timeless quality.</p>
+          <p><strong>Best for:</strong> Portraits, still life, landscapes, historical scenes</p>
+          <div class="style-prompt">Sunflowers in a rustic vase on a wooden table, warm afternoon light, thick impasto brushstrokes, classical style</div>
+          <a href="./" class="try-btn" style="background:#f59e0b;">Try Oil Painting &rarr;</a>
+        </div>
+      </div>
+
+      <div class="style-card">
+        <div class="style-header">
+          <div class="style-icon" style="background:linear-gradient(135deg,#ec4899,#db2777);">&#127752;</div>
+          <div>
+            <h2>Anime</h2>
+            <div class="subtitle">Japanese animation</div>
+          </div>
+        </div>
+        <div class="style-body">
+          <p>Cel-shaded anime/manga aesthetic with clean lines, expressive eyes, and dynamic compositions. Perfect for character art and scenes.</p>
+          <p><strong>Best for:</strong> Characters, action scenes, magical girls, mecha, fan art</p>
+          <div class="style-prompt">Magical warrior princess with flowing silver hair, cherry blossom petals, dramatic pose, cel shading, sparkle effects</div>
+          <a href="./" class="try-btn" style="background:#ec4899;">Try Anime &rarr;</a>
+        </div>
+      </div>
+
+      <div class="style-card">
+        <div class="style-header">
+          <div class="style-icon" style="background:linear-gradient(135deg,#14b8a6,#0d9488);">&#128167;</div>
+          <div>
+            <h2>Watercolor</h2>
+            <div class="subtitle">Soft & artistic</div>
+          </div>
+        </div>
+        <div class="style-body">
+          <p>Soft, flowing washes of color with visible paper texture. Creates dreamy, artistic images with gentle edges and organic color blending.</p>
+          <p><strong>Best for:</strong> Florals, nature scenes, portraits, greeting cards, invitations</p>
+          <div class="style-prompt">Lavender field stretching to the horizon, soft clouds, gentle breeze, loose watercolor washes, visible paper texture</div>
+          <a href="./" class="try-btn" style="background:#14b8a6;">Try Watercolor &rarr;</a>
+        </div>
+      </div>
+
+      <div class="style-card">
+        <div class="style-header">
+          <div class="style-icon" style="background:linear-gradient(135deg,#6366f1,#4f46e5);">&#128302;</div>
+          <div>
+            <h2>3D Render</h2>
+            <div class="subtitle">Cinema-quality CGI</div>
+          </div>
+        </div>
+        <div class="style-body">
+          <p>Clean, polished 3D-rendered look with perfect lighting and smooth surfaces. Like it was made in Blender or Cinema 4D.</p>
+          <p><strong>Best for:</strong> Product design, abstract art, isometric scenes, tech imagery</p>
+          <div class="style-prompt">Isometric floating island with a tiny house, waterfall, and garden, soft studio lighting, octane render, miniature tilt-shift</div>
+          <a href="./" class="try-btn" style="background:#6366f1;">Try 3D Render &rarr;</a>
+        </div>
+      </div>
+
+      <div class="style-card">
+        <div class="style-header">
+          <div class="style-icon" style="background:linear-gradient(135deg,#22c55e,#16a34a);">&#127918;</div>
+          <div>
+            <h2>Pixel Art</h2>
+            <div class="subtitle">Retro game aesthetic</div>
+          </div>
+        </div>
+        <div class="style-body">
+          <p>Charming, nostalgic pixel art style reminiscent of classic 16-bit and 32-bit games. Each pixel is placed with intention.</p>
+          <p><strong>Best for:</strong> Game sprites, retro scenes, avatars, nostalgic imagery</p>
+          <div class="style-prompt">Cozy pixel art tavern interior, fireplace, wooden tables, adventurers sitting, warm torchlight, 16-bit RPG style</div>
+          <a href="./" class="try-btn" style="background:#22c55e;">Try Pixel Art &rarr;</a>
+        </div>
+      </div>
+
+      <div class="style-card">
+        <div class="style-header">
+          <div class="style-icon" style="background:linear-gradient(135deg,#78716c,#57534e);">&#9999;</div>
+          <div>
+            <h2>Sketch</h2>
+            <div class="subtitle">Hand-drawn linework</div>
+          </div>
+        </div>
+        <div class="style-body">
+          <p>Pencil and ink sketches with detailed linework. Creates the look of a skilled artist's sketchbook with cross-hatching and fine detail.</p>
+          <p><strong>Best for:</strong> Portraits, architecture, nature studies, concept sketches</p>
+          <div class="style-prompt">Detailed pencil sketch of a Gothic cathedral, intricate stonework, cross-hatching shadows, architectural drawing style</div>
+          <a href="./" class="try-btn" style="background:#78716c;">Try Sketch &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cta-box">
+      <h2>Try All 8 Styles Free</h2>
+      <p>No signup needed. Pick a style, type a prompt, and create art in seconds.</p>
+      <a href="./" class="cta-btn">Open Generator &rarr;</a>
+    </div>
+
+    <div class="ad-slot">
+      <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-5182415121977508" data-ad-slot="XXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>DreamForge AI &mdash; Free AI Image Generator</p>
+      <p style="margin-top: 8px;">
+        <a href="./">Generator</a> &middot;
+        <a href="tips.html">Prompt Tips</a> &middot;
+        <a href="faq.html">FAQ</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/tradespro-guide/" target="_blank">TradesPro</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/eduspark/" target="_blank">EduSpark</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/claimcheck/" target="_blank">ClaimCheck</a> &middot;
+        <a href="https://gogopaschalgadget-web.github.io/root-hub/" target="_blank">Root Hub</a>
+      </p>
+      <p style="margin-top: 8px; font-size: 12px; color: var(--text-dim);">&copy; 2026 DreamForge AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
