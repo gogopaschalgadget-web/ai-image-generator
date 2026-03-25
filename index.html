@@ -7,7 +7,7 @@
   <meta name="description" content="Generate stunning AI images for free. No signup required. 8 art styles including Photorealistic, Anime, Cyberpunk, Fantasy & more. Type a prompt, get art in seconds.">
   <meta name="keywords" content="free AI image generator, AI art, text to image, AI art generator, free image creator, DreamForge AI, AI illustration, generate images online">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="DreamForge AI — Free AI Image Generator">
+  <meta property="og:title" content="DreamForge AI — Free AI Image Generathhor">
   <meta property="og:description" content="Generate stunning AI images for free. 8 art styles, no signup, no credit card. Just type and create.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=1200&q=80">
   <meta property="og:url" content="https://gogopaschalgadget-web.github.io/ai-image-generator/">
@@ -829,7 +829,7 @@
       encodeURIComponent(fullPrompt) +
       '?width=' + dims[0] + '&height=' + dims[1] +
       '&seed=' + Math.floor(Math.random() * 999999) +
-      '&nologo=true';
+      '&nologo=true&key=pk_AB9noLRFqyNHyewQ';
 
     var img = new Image();
     img.onload = function() {
@@ -960,7 +960,7 @@
     grid.innerHTML = examplePrompts.map(function(item) {
       var url = 'https://image.pollinations.ai/prompt/' +
         encodeURIComponent(item.prompt) +
-        '?width=512&height=512&seed=' + item.seed + '&nologo=true';
+        '?width=512&height=512&seed=' + item.seed + '&nologo=true&key=pk_AB9noLRFqyNHyewQ';
       return '<div class="gallery-item" onclick="useGalleryPrompt(\'' + escapeHtml(item.prompt) + '\')">' +
         '<img src="' + url + '" alt="' + escapeHtml(item.prompt) + '" loading="lazy">' +
         '<div class="gallery-prompt">' + escapeHtml(item.prompt) + '</div>' +
